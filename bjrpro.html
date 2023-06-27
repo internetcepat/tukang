@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+  <title>bjrpro</title>
+
+  
+</head>
+<style>
+  /* Gaya untuk elemen utama */
+.content-body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+/* Gaya untuk judul produk */
+.titleproduk {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Gaya untuk detail harga */
+.price-detail {
+  color: #e60000;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Gaya untuk diskon */
+.badge-danger {
+  font-size: 11pt;
+  background-color: #e60000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+/* Gaya untuk harga asli yang dicoret */
+.text-muted {
+  color: #999;
+  margin-left: 2px;
+  text-decoration: line-through;
+}
+
+/* Gaya untuk deskripsi produk */
+.content-body p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Gaya untuk informasi tambahan */
+.content-body dl.row {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.content-body dt {
+  font-weight: bold;
+}
+
+/* Gaya untuk tombol beli dan tambah ke keranjang */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Gaya untuk tombol tambah/kurangi jumlah produk */
+.input-spinner {
+  width: 120px;
+}
+
+.input-spinner .input-group-prepend,
+.input-spinner .input-group-append {
+  width: 40px;
+}
+
+.input-spinner .btn {
+  width: 100%;
+  padding: 0;
+}
+
+.input-spinner input {
+  text-align: center;
+}
+
+/* Gaya untuk tombol hati (favorit) */
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+  padding: 5px;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Gaya untuk pesan sukses, peringatan, dan kesalahan */
+.swal2-icon {
+  font-size: 32px;
+}
+
+.swal2-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.swal2-content {
+  font-size: 16px;
+}
+
+/* Gaya untuk ikon keranjang */
+.fa-shopping-cart {
+  margin-left: 5px;
+}
+
+/* Gaya untuk ikon hati (favorit) */
+.fa-heart {
+  margin-left: 5px;
+}
+
+/* Gaya untuk link */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+</style>
+<body>
+<article class="content-body">
+
+            <h1 class="titleproduk">Baja Ringan Minimalis</h1>
+            <div class="mb-3">
+
+              <p class="price-detail h3 ">Rp165.000</p>
+
+              <span class="badge badge-danger" style="font-size:11pt">20% OFF</span><s><span class="text-muted ml-2">Rp198.000</span></s>
+            </div>
+            <h4 style="font-size:1rem;font-weight:normal;margin-top:5px;font-style: italic;"></h4>
+            <div class="rating-wrap my-3">
+
+              
+            </div> <!-- rating-wrap.// -->
+
+
+            <hr>
+            Membuat kanopi<br>Dengan bahan baja ringan dengan tebal 0.75&nbsp;<br>atap galvalum pasir 0.25.<br>Tiang double<br><br><br>Harga perM2<br><br>            <hr>
+            <dl class="row mt-4">
+              
+
+                            <dt class="col-sm-4">Kondisi</dt><dd class="col-sm-8">Baru</dd>
+              <dt class="col-sm-4"></dt><dd class="col-sm-8"></dd>
+                            <dt class="col-sm-4">Tanggal Posting</dt><dd class="col-sm-8">2023-04-27 11:25:02</dd>
+            </dl>
+
+            <hr>
+
+            
+<form name="produkform" method="post">
+  <div class="row">
+
+    <!-- col.// -->
+    
+  </div>
+
+  <div class="row">
+    <div class="col-12 flex-grow-0">
+      <h6>Jumlah Produk</h6>
+      <div class="input-group mb-3 input-spinner">
+        <div class="input-group-prepend">
+          <button class="btn btn-light" type="button" id="button-minus"> - </button>
+        </div>
+        <input type="text" class="form-control" value="1" name="jumlah" id="jumlah_produk">
+        <div class="input-group-append">
+          <button class="btn btn-light" type="button" id="button-plus"> + </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-8 mb-4">
+              <a href="#d"><button type="button" class="btn btn-primary btn-block btn-lg">Beli di aplikasi NgudiArto</button></a>
+            </div>
+    
+</div>
+  <div class="row">
+    <div class="col-2 col-md-1">
+      <button type="button" class="btn btn-outline-primary " onclick="addToFavorite(1860907)"> <i class="fas fa-heart"></i></button>
+    </div>
+    <div class="col-10 col-md-7">
+    
+    </div>
+
+  </div>
+</form>
+<script type="text/javascript">
+$('#button-plus').click(function(){
+  let jumlah=$('#jumlah_produk').val();
+  jumlah++;
+  $('#jumlah_produk').val(jumlah);
+});
+$('#button-minus').click(function(){
+  let jumlah=$('#jumlah_produk').val();
+  if(jumlah>1){
+    jumlah--;
+  }
+  $('#jumlah_produk').val(jumlah);
+});
+function addToFavorite(fav) {
+  Swal.fire({
+    title: 'Silahkan tunggu',allowOutsideClick: () => !Swal.isLoading(),
+    didOpen: () => {
+      Swal.showLoading();
+      $.post( "/api/addfav",{fav:fav})
+      .done(function(data) {
+
+        if(data=='ok'){
+          Swal.fire({
+            icon: 'success',
+            title: 'Produk ditambahkan ke daftar favorit',
+            showConfirmButton: false,
+            timer: 2500
+          });
+
+        }else if(data=='noauth'){
+          Swal.fire({
+            icon: 'warning',
+            title: 'Silahkan login terlebih dahulu',
+            showConfirmButton: false,
+            timer: 2500
+          })
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Produk gagal ditambahkan ke daftar favorit',
+            showConfirmButton: false,
+            timer: 2500
+          })
+        }
+
+      });
+    }
+  });
+    if (typeof fbq !== "undefined") {
+      fbq('track', 'AddToWishlist',{content_name:"Baja Ringan STANDART"});
+    }
+}
+
+</script>
+
+  <script type="text/javascript">
+
+  function addToCart(id1) {
+    Swal.fire({
+      title: 'Silahkan tunggu',allowOutsideClick: () => !Swal.isLoading(),
+      didOpen: () => {
+        Swal.showLoading();
+        $.post( "/api/addcart",{id1:id1})
+        .done(function(data) {
+          const cart_result=JSON.parse(data);
+          console.log(data);
+          if(cart_result.status=='ok'){
+            Swal.fire({
+              icon: 'success',
+              title: 'Produk ditambahkan ke keranjang belanja.',
+              showConfirmButton: false,
+              timer: 2500
+            });
+            let cart=parseInt($('#cart_count').text())+parseInt(cart_result.jumlah);
+            $('#cart_count').text(cart);
+          }else if(cart_result.status=='noauth'){
+            Swal.fire({
+              icon: 'warning',
+              title: 'Silahkan login terlebih dahulu',
+              showConfirmButton: false,
+              timer: 2500
+            })
+          }else if(cart_result.status=='nodelivery'){
+            Swal.fire({
+              icon: 'warning',
+              title: 'Produk ini hanya dapat dipesan didalam aplikasi Android Olshop Ku 2',
+
+              confirmButtonText: 'Download Aplikasi Android Olshop Ku 2',
+
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.open('/download','_blank');
+              }
+            })
+
+          }else{
+            Swal.fire({
+              icon: 'error',
+              title: 'Produk gagal ditambahkan ke keranjang belanja',
+              showConfirmButton: false,
+              timer: 2500
+            })
+          }
+
+        });
+      }
+    });
+  }
+
+  $(document).ready(function() {
+    $('#addcart').click(function() {
+      event.preventDefault();
+      var form =  $('form[name="produkform"]')
+      addToCart(form.serializeArray());
+      if (typeof fbq !== "undefined") {
+        fbq('track', 'AddToCart');
+      }
+    })
+  });
+
+</script>
+
+
+
+          </article>
+</body>
+
+</html>
+
